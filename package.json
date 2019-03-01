@@ -1,0 +1,26 @@
+{
+  "name": "lantu-union-pay",
+  "version": "0.2.2",
+  "description": "Lantu Union Pay",
+  "cordova": {
+    "id": "lantu-union-pay",
+    "platforms": [
+
+    ]
+  },
+  "keywords": [
+    "lantu",
+    "union pay",
+    "pay",
+    "union"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/lantutech/lantu-union-pay.git"
+  },
+  "bugs": {
+      "url": "https://gitee.com/lantutech/lantu-union-pay/issues"
+  },
+  "author": "pengVc",
+  "license": "ISC"
+}
