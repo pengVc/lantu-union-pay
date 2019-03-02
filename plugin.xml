@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="lantu-union-pay" version="0.2.2" xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<name>Lantu Union Pay</name>
+	<author>lantutech</author>
+
+	<js-module name="LantuUnionPay" src="www/lantu-union-pay.js">
+		<clobbers target="cordova.plugins.LantuUnionPay"/>
+	</js-module>
+
+	<platform name="ios">
+
+		<config-file parent="/*" target="config.xml">
+			<feature name="LantuUnionPay">
+				<param name="ios-package" value="LantuUnionPay"/>
+			</feature>
+		</config-file>
+
+		<source-file src="src/ios/lantuUnionPay.m"/>
+
+		<config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">
+			<array>
+				<string>uppaysdk</string>
+				<string>uppaywallet</string>
+				<string>uppayx1</string>
+				<string>uppayx2</string>
+				<string>uppayx3</string>
+			</array>
+		</config-file>
+
+		<config-file target="*-Info.plist" parent="NSAppTransportSecurity">
+			<dict>
+				<key>NSAllowsArbitraryLoads</key>
+				<true/>
+			</dict>
+		</config-file>
+
+		<config-file target="*-Info.plist" parent="CFBundleURLTypes">
+			<array>
+				<dict>
+					<key>CFBundleURLName</key>
+					<string>mobileCampusUnionPay</string>
+					<key>CFBundleURLSchemes</key>
+					<array>
+						<string>lantumcampusunionpay</string>
+					</array>
+				</dict>
+			</array>
+		</config-file>
+
+		<header-file src="src/ios/libs/UPPaymentControl.h" />
+		<source-file src="src/ios/libs/libPaymentControl.a" framework="true" />
+
+		<!-- Other required frameworks -->
+		<framework src="CFNetwork.framework" />
+		<framework src="SystemConfiguration.framework" />
+		<framework src="libz.tbd" />
+
+	</platform>
+
+</plugin>

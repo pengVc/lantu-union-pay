@@ -5,7 +5,7 @@
   "cordova": {
     "id": "lantu-union-pay",
     "platforms": [
-
+      "ios"
     ]
   },
   "keywords": [
