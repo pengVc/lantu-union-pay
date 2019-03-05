@@ -54,6 +54,9 @@ function pay(payInfo, success, error){
 		mode: "01"
 	}, payInfo);
 
+
+	if(!_valid_with_alert_param(payInfo)){ return }
+
 	exec((result) => {
 		console.log("支付完成: ", result);
 		_execFunction(success, arguments);
@@ -64,6 +67,31 @@ function pay(payInfo, success, error){
 	
 }
 
+/**
+ *
+ * @param payInfo
+ * @return { boolean }
+ * @private
+ */
+function _valid_with_alert_param(payInfo){
+
+	let isValid = false;
+
+	detect: {
+
+		if(!payInfo.tn){
+			alert("缺少tn(交易流水号)!");
+			break detect;
+		}
+
+		isValid = true;
+
+	}
+
+
+	return isValid;
+
+}
 
 /**
  * @description 检查是否安装银联App回调
