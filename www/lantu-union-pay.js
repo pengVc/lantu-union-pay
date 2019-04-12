@@ -57,12 +57,16 @@ function pay(payInfo, success, error){
 
 	if(!_valid_with_alert_param(payInfo)){ return }
 
-	exec((result) => {
+	exec(function(result){
+
 		console.log("支付完成: ", result);
 		_execFunction(success, arguments);
-	}, (result) => {
+
+	}, function(result){
+
 		console.log("支付失败: ", result);
 		_execFunction(error, arguments);
+
 	}, "LantuUnionPay", "pay", [payInfo]);
 	
 }
@@ -106,10 +110,10 @@ function _valid_with_alert_param(payInfo){
  */
 function isUnionAppInstalled(success, error){
 
-	exec((isInstalled) => {
+	exec(function(isInstalled){
 		console.log("检查是否安装银联App: ", isInstalled);
 		_execFunction(success, arguments);
-	}, (error) => {
+	}, function(error){
 		console.log("检测发生异常: ", error);
 		_execFunction(error, arguments);
 	}, "LantuUnionPay", "isUnionAppInstalled");
