@@ -17,7 +17,7 @@ exports.isUnionAppInstalled = isUnionAppInstalled;
 /**
  * 支付结果接口
  * @typedef { Object } payResult
- * @property { String } type 支付结果, 候选值 "success"、"fail"、"cancel"
+ * @property { String } code 支付结果, 候选值 "success"、"fail"、"cancel"
  * @property { successPaySignData } [successExtraData] 仅有成功时返回
  *
  */

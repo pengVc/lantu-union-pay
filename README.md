@@ -42,7 +42,7 @@ function success(payResult){
 	/**
 	 * 支付结果
 	 * @type { Object } payResult
-	 * @property { String } type 支付结果, 候选值 "success"、"fail"、"cancel"
+	 * @property { String } code 支付结果, 候选值 "success"、"fail"、"cancel"
 	 * @property { successPaySignData } [successExtraData] 仅有成功时返回
 	 */
 	payResult;
@@ -67,7 +67,7 @@ function error(payResult){
 	/**
 	 * 支付结果
 	 * @type { Object } payResult
-	 * @property { String } type 支付结果, 候选值 "success"、"fail"、"cancel"
+	 * @property { String } code 支付结果, 候选值 "success"、"fail"、"cancel"
 	 */
 	payResult;
 
@@ -85,15 +85,15 @@ cordova.plugins.LantuUnionPay.pay({
 	
 }, (payResult) => {
 	
-	const { type, successPaySignData } = payResult;
-	alert(`支付成功 ${ type } !`);
+	const { code, successPaySignData } = payResult;
+	alert(`支付成功 ${ code } !`);
 	
 	console.log("仅有成功时返回: ", successPaySignData);
 	
 }, (payResult) => {
 	
-	const { type } = payResult;
-	alert(`支付失败 ${ type }`);
+	const { code } = payResult;
+	alert(`支付失败 ${ code }`);
 	
 });
 

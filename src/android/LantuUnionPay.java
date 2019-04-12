@@ -58,11 +58,18 @@ public class LantuUnionPay extends CordovaPlugin {
             return;
         }
 
-        String payResult = data.getExtras().getString("pay_result");
+        String payResult;
+
+        try {
+            payResult = data.getExtras().getString("pay_result");
+        }catch (NullPointerException e){
+            payResult = "";
+        }
+
         JSONObject pluginResultInfo = new JSONObject();
 
         try {
-            pluginResultInfo.put("type", payResult);
+            pluginResultInfo.put("code", payResult.toLowerCase());
         } catch (JSONException e) {
             e.printStackTrace();
         }

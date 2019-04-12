@@ -118,7 +118,7 @@
 		CDVPluginResult* pluginResult = nil;
 		
 		NSMutableDictionary* pluginResultInfo = [NSMutableDictionary dictionaryWithCapacity:3];
-		[pluginResultInfo setObject:code forKey:@"type"];
+		[pluginResultInfo setObject:code forKey:@"code"];
 
 		if([code isEqualToString:@"success"]) {
 			// 结果code为成功时，去商户后台查询一下确保交易是成功的再展示成功
