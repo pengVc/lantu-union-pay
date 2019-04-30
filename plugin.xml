@@ -9,6 +9,8 @@
 		<clobbers target="cordova.plugins.LantuUnionPay"/>
 	</js-module>
 
+	<preference name="UNION_PAY_URL" default="lantumcampusunionpay" />
+
 	<platform name="ios">
 
 		<config-file parent="/*" target="config.xml">
@@ -43,7 +45,7 @@
 					<string>mobileCampusUnionPay</string>
 					<key>CFBundleURLSchemes</key>
 					<array>
-						<string>lantumcampusunionpay</string>
+						<string>$UNION_PAY_URL</string>
 					</array>
 				</dict>
 			</array>

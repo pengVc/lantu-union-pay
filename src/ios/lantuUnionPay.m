@@ -24,7 +24,6 @@
 
 - (void)pluginInitialize{
 	
-	// @Todo: 今后调整为通过 plugin.xml 安装并获取
 	NSString *unionPaySchemeId = @"mobileCampusUnionPay";
 
 	// 获取 -info.plist CFBundleURLTypes
