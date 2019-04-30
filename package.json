@@ -1,6 +1,6 @@
 {
   "name": "lantu-union-pay",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Lantu Union Pay",
   "cordova": {
     "id": "lantu-union-pay",
