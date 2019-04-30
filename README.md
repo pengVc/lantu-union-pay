@@ -108,17 +108,23 @@ cordova.plugins.LantuUnionPay.pay({
 
 手机控件是通过 URL Types回调协议, 因此需要在 Xcode 中配置 info.plist 配置 URL TYPES. 
 
-lantu-union-pay 插件在安装时候已经做了这一件事, 但目前是写的一个值: `lantumcampusunionpay`
+lantu-union-pay 插件在安装时候已经做了这一件事, 默认值为 `lantumcampusunionpay`
 ![ios_CFBundleURLTypes](doc/ios_CFBundleURLTypes.png)
 
-如果有需求调整此配置项, 可自行在插件安装前暂时手动调整一下.
+如果有需求调整此配置项, 可自行在插件安装时候, 带上定制的参数( `-variable UNION_PAY_URL=*` ), 例如:
+
+```
+
+cordova plugin add https://gitee.com/lantutech/lantu-union-pay.git --variable UNION_PAY_URL=YourCustomizedUrl
+
+```
 
 <br>
 
 
 ### Todo 清单
 
-- [ ] IOS 安装时候提供 scheme variable 参数
+- [x] IOS 安装时候提供 scheme variable 参数
 - [ ] 兼容 cordova-android@7、cordova-android@8
 - [ ] 补全 pkg.json 遗失的 cordova 版本等依
 
@@ -126,4 +132,9 @@ lantu-union-pay 插件在安装时候已经做了这一件事, 但目前是写�
 
 ### Release Log
 
-+ v0.2.2: 实现 Android、IOS 核心支付方法, 并在 cordova@8、cordova-android@6.4.1 、cordova-ios@4.5.4 完成测试
++ v0.2.3: 
+	+ 新增 插件安装时 定制 UNION_PAY_URL 参数
+	+ 修复 无法正确拿到支付回调结果
+
++ v0.2.2: 
+	+ 实现 Android、IOS 核心支付方法, 并在 cordova@8、cordova-android@6.4.1 、cordova-ios@4.5.4 完成测试
