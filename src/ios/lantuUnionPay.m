@@ -122,7 +122,10 @@
 		if([code isEqualToString:@"success"]) {
 			// 结果code为成功时，去商户后台查询一下确保交易是成功的再展示成功
 			[pluginResultInfo setObject:@"支付完成" forKey:@"msg"];
-			[pluginResultInfo setObject:data forKey:@"successExtraData"];
+
+			if(data != nil){
+				[pluginResultInfo setObject:data forKey:@"successExtraData"];
+			}
 
 			pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:pluginResultInfo];
 			[self.commandDelegate sendPluginResult:pluginResult callbackId:self.currentCallbackId];
