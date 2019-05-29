@@ -132,6 +132,9 @@ cordova plugin add https://gitee.com/lantutech/lantu-union-pay.git --variable UN
 
 ### Release Log
 
++ v0.2.4: 
+	+ 修复 ios 在已安装云闪付APP 场景下, 成功支付后崩溃的问题
+
 + v0.2.3: 
 	+ 新增 插件安装时 定制 UNION_PAY_URL 参数
 	+ 修复 无法正确拿到支付回调结果
