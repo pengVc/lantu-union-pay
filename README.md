@@ -2,14 +2,14 @@
 
 [银联手机控件](https://open.unionpay.com/tjweb/acproduct/list?apiservId=450) cordova 插件
 
-## 简介
+## A. 简介
 
 [集成银联手机控件](https://open.unionpay.com/ajweb/help/file/techFile?productId=3):
 - Android 手机支付控件开发包(安卓版)3.4.5
 - IOS 手机支付控件开发包(iOS版)3.3.11
 
 
-### 安装方法
+### F. 安装方法
 
 ```
 
@@ -17,7 +17,15 @@ cordova plugin add https://gitee.com/lantutech/lantu-union-pay.git
 
 ```
 
-### 使用方法
+### J. API
+
+- `cordova.plugins.LantuUnionPay.pay`
+- `cordova.plugins.LantuUnionPay.isUnionAppInstalled`
+
+
+### L. Usage - 使用方法
+
+#### L.1 支付API
 
 ```javascript
 
@@ -25,7 +33,7 @@ cordova.plugins.LantuUnionPay.pay(options, success, error);
 
 ```
 
-#### 参数
+#### L.1 支付API参数
 
 __- { Object } options:__
 * { String } tn - 银联交易流水号(支付空间使用)
@@ -67,7 +75,7 @@ function error(payResult){
 	/**
 	 * 支付结果
 	 * @type { Object } payResult
-	 * @property { String } code 支付结果, 候选值 "success"、"fail"、"cancel"
+	 * @property { String } code 支付结果, 候选值 "fail"、"cancel"
 	 */
 	payResult;
 
@@ -101,7 +109,33 @@ cordova.plugins.LantuUnionPay.pay({
 
 <br>
 
-### 注意事项
+
+#### L.2 嗅探云闪付API 是否安装
+
+```javascript
+
+cordova.plugins.LantuUnionPay.isUnionAppInstalled(callback);
+
+```
+
+#### L.2 参数
+
+__- { Function } callback:__
+执行成功回调:
+
+```javascript
+function callback(isInstalled){ 
+
+	/**
+	 * 是否已安装
+	 * @type { Boolean } isInstalled
+	 */
+	isInstalled;
+
+}
+```
+
+### N. 注意事项
 
 
 #### ios 支付结束结果返回到 app 机制
@@ -122,7 +156,7 @@ cordova plugin add https://gitee.com/lantutech/lantu-union-pay.git --variable UN
 <br>
 
 
-### Todo 清单
+### X. Todo 清单
 
 - [x] IOS 安装时候提供 scheme variable 参数
 - [ ] 兼容 cordova-android@7、cordova-android@8
@@ -130,7 +164,7 @@ cordova plugin add https://gitee.com/lantutech/lantu-union-pay.git --variable UN
 
 <br>
 
-### Release Log
+### Y. Release Log
 
 + v0.2.4: 
 	+ 修复 ios 在已安装云闪付APP 场景下, 成功支付后崩溃的问题
