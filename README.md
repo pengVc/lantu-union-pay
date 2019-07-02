@@ -158,9 +158,11 @@ cordova plugin add https://gitee.com/lantutech/lantu-union-pay.git --variable UN
 
 ### X. Todo 清单
 
+- [ ] 说明 cordova-android@7.x、cordova-android@8.x 插件安装到工程后的结果 
+
 - [x] IOS 安装时候提供 scheme variable 参数
-- [ ] 兼容 cordova-android@7、cordova-android@8
-- [ ] 补全 pkg.json 遗失的 cordova 版本等依
+- [X] 兼容测试 [cordova-android@7](doc/cordova-android@7.x.png)、[cordova-android@8](doc/cordova-android@8.x.png)
+- [x] 补全 pkg.json 遗失的 cordova 版本等依
 
 <br>
 
