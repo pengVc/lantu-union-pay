@@ -9,6 +9,14 @@
       "ios"
     ]
   },
+  "engines": {
+    "cordovaDependencies": {
+      ">=0.2.2": {
+        "cordova-ios": ">4.0.0",
+        "cordova-android": ">6.0.0"
+      }
+    }
+  },
   "keywords": [
     "lantu",
     "union pay",
